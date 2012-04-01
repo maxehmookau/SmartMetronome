@@ -13,6 +13,7 @@
 		50006A6315285EFF0097FDCC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50006A6115285EFF0097FDCC /* InfoPlist.strings */; };
 		50006A6515285EFF0097FDCC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50006A6415285EFF0097FDCC /* main.m */; };
 		50006A6915285EFF0097FDCC /* SMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50006A6815285EFF0097FDCC /* SMAppDelegate.m */; };
+		50006A71152861250097FDCC /* MetronomeBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50006A70152861250097FDCC /* MetronomeBuffer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		50006A6615285EFF0097FDCC /* SmartMetronome-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartMetronome-Prefix.pch"; sourceTree = "<group>"; };
 		50006A6715285EFF0097FDCC /* SMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMAppDelegate.h; sourceTree = "<group>"; };
 		50006A6815285EFF0097FDCC /* SMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMAppDelegate.m; sourceTree = "<group>"; };
+		50006A6F152861250097FDCC /* MetronomeBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetronomeBuffer.h; sourceTree = "<group>"; };
+		50006A70152861250097FDCC /* MetronomeBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetronomeBuffer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,8 @@
 			children = (
 				50006A6715285EFF0097FDCC /* SMAppDelegate.h */,
 				50006A6815285EFF0097FDCC /* SMAppDelegate.m */,
+				50006A6F152861250097FDCC /* MetronomeBuffer.h */,
+				50006A70152861250097FDCC /* MetronomeBuffer.m */,
 				50006A5F15285EFF0097FDCC /* Supporting Files */,
 			);
 			path = SmartMetronome;
@@ -154,6 +159,7 @@
 			files = (
 				50006A6515285EFF0097FDCC /* main.m in Sources */,
 				50006A6915285EFF0097FDCC /* SMAppDelegate.m in Sources */,
+				50006A71152861250097FDCC /* MetronomeBuffer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
