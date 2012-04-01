@@ -7,6 +7,7 @@
 //
 
 #import "SMAppDelegate.h"
+#import "MetronomeBuffer.h"
 
 @implementation SMAppDelegate
 
@@ -18,6 +19,7 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    MetronomeBuffer *buffer = [[MetronomeBuffer alloc] initWithTempo:120.0f];
     return YES;
 }
 
