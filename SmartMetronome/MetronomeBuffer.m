@@ -18,7 +18,6 @@
         }else{
             [buffer insertObject:[NSNumber numberWithFloat:0.0f] atIndex:x];
         }
-        
     }
     return [self init];
 }

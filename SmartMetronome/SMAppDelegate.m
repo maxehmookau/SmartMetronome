@@ -7,7 +7,7 @@
 //
 
 #import "SMAppDelegate.h"
-#import "MetronomeBuffer.h"
+#import "MainView.h"
 
 @implementation SMAppDelegate
 
@@ -16,10 +16,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [[MainView alloc] init];
     [self.window makeKeyAndVisible];
-    MetronomeBuffer *buffer = [[MetronomeBuffer alloc] initWithTempo:120.0f];
     return YES;
 }
 

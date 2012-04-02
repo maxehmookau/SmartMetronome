@@ -14,6 +14,9 @@
 		50006A6515285EFF0097FDCC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50006A6415285EFF0097FDCC /* main.m */; };
 		50006A6915285EFF0097FDCC /* SMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50006A6815285EFF0097FDCC /* SMAppDelegate.m */; };
 		50006A71152861250097FDCC /* MetronomeBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50006A70152861250097FDCC /* MetronomeBuffer.m */; };
+		50A46C51152903220051BD84 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A46C4F152903220051BD84 /* MainView.m */; };
+		50A46C52152903220051BD84 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A46C50152903220051BD84 /* MainView.xib */; };
+		50A46C55152904BB0051BD84 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A46C54152904BB0051BD84 /* iAd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,10 @@
 		50006A6815285EFF0097FDCC /* SMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMAppDelegate.m; sourceTree = "<group>"; };
 		50006A6F152861250097FDCC /* MetronomeBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetronomeBuffer.h; sourceTree = "<group>"; };
 		50006A70152861250097FDCC /* MetronomeBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetronomeBuffer.m; sourceTree = "<group>"; };
+		50A46C4E152903220051BD84 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
+		50A46C4F152903220051BD84 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
+		50A46C50152903220051BD84 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		50A46C54152904BB0051BD84 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A46C55152904BB0051BD84 /* iAd.framework in Frameworks */,
 				50006A5915285EFF0097FDCC /* UIKit.framework in Frameworks */,
 				50006A5B15285EFF0097FDCC /* Foundation.framework in Frameworks */,
 				50006A5D15285EFF0097FDCC /* CoreGraphics.framework in Frameworks */,
@@ -65,6 +73,7 @@
 		50006A5715285EFF0097FDCC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50A46C54152904BB0051BD84 /* iAd.framework */,
 				50006A5815285EFF0097FDCC /* UIKit.framework */,
 				50006A5A15285EFF0097FDCC /* Foundation.framework */,
 				50006A5C15285EFF0097FDCC /* CoreGraphics.framework */,
@@ -79,6 +88,9 @@
 				50006A6815285EFF0097FDCC /* SMAppDelegate.m */,
 				50006A6F152861250097FDCC /* MetronomeBuffer.h */,
 				50006A70152861250097FDCC /* MetronomeBuffer.m */,
+				50A46C4E152903220051BD84 /* MainView.h */,
+				50A46C4F152903220051BD84 /* MainView.m */,
+				50A46C50152903220051BD84 /* MainView.xib */,
 				50006A5F15285EFF0097FDCC /* Supporting Files */,
 			);
 			path = SmartMetronome;
@@ -147,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50006A6315285EFF0097FDCC /* InfoPlist.strings in Resources */,
+				50A46C52152903220051BD84 /* MainView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +173,7 @@
 				50006A6515285EFF0097FDCC /* main.m in Sources */,
 				50006A6915285EFF0097FDCC /* SMAppDelegate.m in Sources */,
 				50006A71152861250097FDCC /* MetronomeBuffer.m in Sources */,
+				50A46C51152903220051BD84 /* MainView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +277,7 @@
 				50006A6E15285EFF0097FDCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
