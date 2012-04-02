@@ -7,12 +7,27 @@
 //
 
 #import "MainView.h"
+#import "Metronome.h"
 
 @interface MainView ()
 
 @end
 
 @implementation MainView
+
+-(void)changeTempo:(id)sender
+{
+    [currentMetronome stop];
+    currentMetronome = nil;
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.roundingIncrement = [NSNumber numberWithDouble:1];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    
+    currentMetronome = [[Metronome alloc] initWithInitialBPM:[slider value]];
+    [currentMetronome start];
+    [tempoButton setTitle:[formatter stringFromNumber:[NSNumber numberWithFloat:[slider value]]] forState: UIControlStateNormal];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,7 +40,7 @@
 
 - (void)viewDidLoad
 {
-    ad.requiredContentSizeIdentifiers = [NSSet setWithObjects:ADBannerContentSizeIdentifierPortrait, ADBannerContentSizeIdentifierLandscape, nil];
+    ad.requiredContentSizeIdentifiers = [NSSet setWithObjects:ADBannerContentSizeIdentifierPortrait, nil];
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }

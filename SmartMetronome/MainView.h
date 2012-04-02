@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <iAD/iAD.h>
+#import "Metronome.h"
 
 @interface MainView : UIViewController <ADBannerViewDelegate>
 {
     IBOutlet ADBannerView *ad;
+    IBOutlet UISlider *slider;
+    IBOutlet UIButton *tempoButton;
+    Metronome *currentMetronome;
 }
+
+-(IBAction)changeTempo:(id)sender;
 @end

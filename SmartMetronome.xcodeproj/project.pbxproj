@@ -13,7 +13,10 @@
 		50006A6315285EFF0097FDCC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50006A6115285EFF0097FDCC /* InfoPlist.strings */; };
 		50006A6515285EFF0097FDCC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50006A6415285EFF0097FDCC /* main.m */; };
 		50006A6915285EFF0097FDCC /* SMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50006A6815285EFF0097FDCC /* SMAppDelegate.m */; };
-		50006A71152861250097FDCC /* MetronomeBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50006A70152861250097FDCC /* MetronomeBuffer.m */; };
+		502AC36A152A1F42008D717A /* InputRecorder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 502AC369152A1F42008D717A /* InputRecorder.mm */; };
+		50A3A7FA152A02D6001B346E /* Metronome.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A3A7F9152A02D6001B346E /* Metronome.m */; };
+		50A3A7FC152A07AF001B346E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A3A7FB152A07AF001B346E /* AVFoundation.framework */; };
+		50A3A800152A08BC001B346E /* Pop-02.wav in Resources */ = {isa = PBXBuildFile; fileRef = 50A3A7FF152A08BC001B346E /* Pop-02.wav */; };
 		50A46C51152903220051BD84 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A46C4F152903220051BD84 /* MainView.m */; };
 		50A46C52152903220051BD84 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A46C50152903220051BD84 /* MainView.xib */; };
 		50A46C55152904BB0051BD84 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A46C54152904BB0051BD84 /* iAd.framework */; };
@@ -30,8 +33,12 @@
 		50006A6615285EFF0097FDCC /* SmartMetronome-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartMetronome-Prefix.pch"; sourceTree = "<group>"; };
 		50006A6715285EFF0097FDCC /* SMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMAppDelegate.h; sourceTree = "<group>"; };
 		50006A6815285EFF0097FDCC /* SMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMAppDelegate.m; sourceTree = "<group>"; };
-		50006A6F152861250097FDCC /* MetronomeBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetronomeBuffer.h; sourceTree = "<group>"; };
-		50006A70152861250097FDCC /* MetronomeBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetronomeBuffer.m; sourceTree = "<group>"; };
+		502AC368152A1F42008D717A /* InputRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputRecorder.h; sourceTree = "<group>"; };
+		502AC369152A1F42008D717A /* InputRecorder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = InputRecorder.mm; sourceTree = "<group>"; };
+		50A3A7F8152A02D6001B346E /* Metronome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Metronome.h; sourceTree = "<group>"; };
+		50A3A7F9152A02D6001B346E /* Metronome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Metronome.m; sourceTree = "<group>"; };
+		50A3A7FB152A07AF001B346E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		50A3A7FF152A08BC001B346E /* Pop-02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Pop-02.wav"; sourceTree = "<group>"; };
 		50A46C4E152903220051BD84 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
 		50A46C4F152903220051BD84 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
 		50A46C50152903220051BD84 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
@@ -43,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A3A7FC152A07AF001B346E /* AVFoundation.framework in Frameworks */,
 				50A46C55152904BB0051BD84 /* iAd.framework in Frameworks */,
 				50006A5915285EFF0097FDCC /* UIKit.framework in Frameworks */,
 				50006A5B15285EFF0097FDCC /* Foundation.framework in Frameworks */,
@@ -56,6 +64,7 @@
 		50006A4915285EFF0097FDCC = {
 			isa = PBXGroup;
 			children = (
+				50A3A7FF152A08BC001B346E /* Pop-02.wav */,
 				50006A5E15285EFF0097FDCC /* SmartMetronome */,
 				50006A5715285EFF0097FDCC /* Frameworks */,
 				50006A5515285EFF0097FDCC /* Products */,
@@ -73,6 +82,7 @@
 		50006A5715285EFF0097FDCC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50A3A7FB152A07AF001B346E /* AVFoundation.framework */,
 				50A46C54152904BB0051BD84 /* iAd.framework */,
 				50006A5815285EFF0097FDCC /* UIKit.framework */,
 				50006A5A15285EFF0097FDCC /* Foundation.framework */,
@@ -86,11 +96,13 @@
 			children = (
 				50006A6715285EFF0097FDCC /* SMAppDelegate.h */,
 				50006A6815285EFF0097FDCC /* SMAppDelegate.m */,
-				50006A6F152861250097FDCC /* MetronomeBuffer.h */,
-				50006A70152861250097FDCC /* MetronomeBuffer.m */,
 				50A46C4E152903220051BD84 /* MainView.h */,
 				50A46C4F152903220051BD84 /* MainView.m */,
 				50A46C50152903220051BD84 /* MainView.xib */,
+				50A3A7F8152A02D6001B346E /* Metronome.h */,
+				50A3A7F9152A02D6001B346E /* Metronome.m */,
+				502AC368152A1F42008D717A /* InputRecorder.h */,
+				502AC369152A1F42008D717A /* InputRecorder.mm */,
 				50006A5F15285EFF0097FDCC /* Supporting Files */,
 			);
 			path = SmartMetronome;
@@ -160,6 +172,7 @@
 			files = (
 				50006A6315285EFF0097FDCC /* InfoPlist.strings in Resources */,
 				50A46C52152903220051BD84 /* MainView.xib in Resources */,
+				50A3A800152A08BC001B346E /* Pop-02.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,8 +185,9 @@
 			files = (
 				50006A6515285EFF0097FDCC /* main.m in Sources */,
 				50006A6915285EFF0097FDCC /* SMAppDelegate.m in Sources */,
-				50006A71152861250097FDCC /* MetronomeBuffer.m in Sources */,
 				50A46C51152903220051BD84 /* MainView.m in Sources */,
+				50A3A7FA152A02D6001B346E /* Metronome.m in Sources */,
+				502AC36A152A1F42008D717A /* InputRecorder.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
