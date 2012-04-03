@@ -14,4 +14,5 @@
 -(void)stop;
 
 @property (readwrite) int beatsPerMinute;
+
 @end

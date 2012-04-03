@@ -9,6 +9,10 @@
 
 @interface InputRecorder : AVAudioRecorder
 
+{
+    NSError *error;
+    BOOL done;
+}
 /**
  * @method
  * @return A dictionary object with the required audio settings

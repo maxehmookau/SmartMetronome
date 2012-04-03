@@ -15,6 +15,7 @@
 
 @implementation MainView
 
+#pragma mark - Alter Metronome
 -(void)changeTempo:(id)sender
 {
     [currentMetronome stop];
@@ -29,51 +30,57 @@
     [tempoButton setTitle:[formatter stringFromNumber:[NSNumber numberWithFloat:[slider value]]] forState: UIControlStateNormal];
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+-(void)recordSample:(id)sender
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    [hud setLabelText:@"Recording"];
+    [hud setDimBackground:YES];
+    [hud show:YES];
+    [self.view addSubview:hud];
+    count = 0;
+    NSError *error = nil;
+    recorder = [[InputRecorder alloc] initWithURL:nil settings:nil error:&error];
+    [recorder setDelegate:self];
+    [recorder record];
+    recordTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(timerFireMethod:) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:recordTimer forMode:NSDefaultRunLoopMode];
+    [recordTimer fire];
 }
 
+
+- (void)timerFireMethod:(NSTimer*)theTimer
+{
+    if(count >= 10)
+    {
+        [recorder stop];
+        [hud setLabelText:@"Analysing"];
+    }else{
+        count++;
+        NSLog(@"%i", count);
+    }
+}
+
+
+
+#pragma mark - View Lifecycle
 - (void)viewDidLoad
 {
+    hud = [[MBProgressHUD alloc] initWithView:self.view];
+    [hud setMode:MBProgressHUDModeIndeterminate];
     ad.requiredContentSizeIdentifiers = [NSSet setWithObjects:ADBannerContentSizeIdentifierPortrait, nil];
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)viewDidUnload
+
+#pragma mark - AVAudioRecorderDelegate 
+-(void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    NSLog(@"Successful: %@", [self->recorder getFilePath]);
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+-(void)audioRecorderEncodeErrorDidOccur:(AVAudioRecorder *)recorder error:(NSError *)error
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-#pragma mark - ADBannerViewDelegate
-
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner
-{
-}
-
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
-{
-}
-
-- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
-{
-    return YES;
-}
-
-- (void)bannerViewActionDidFinish:(ADBannerView *)banner
-{
+    NSLog(@"Error");
 }
 
 @end

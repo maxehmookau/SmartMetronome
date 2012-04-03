@@ -5,8 +5,10 @@
 @implementation InputRecorder
 -(id)initWithURL:(NSURL *)url settings:(NSDictionary *)settings error:(NSError *__autoreleasing *)outError
 {
+    error = nil;
+    done = NO;
     //Initialise object with forced settings.
-    self = [super initWithURL:[self getFilePath] settings:[self getSettingsDictionary] error:outError];
+    self = [super initWithURL:[self getFilePath] settings:[self getSettingsDictionary] error:nil];
     return self;
 }
 
@@ -32,4 +34,5 @@
     NSURL *newURL = [[NSURL alloc] initFileURLWithPath:soundFilePath];
     return newURL;
 }
+
 @end
